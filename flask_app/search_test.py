@@ -23,6 +23,8 @@ ES_HOST = 'https://'+args['DOMAIN_ELASTIC']
 
 search_term='registro civil'
 
+es= Elasticsearch(ES_HOST, http_auth=(args['elastic_user'], args['elastic_psswd']),use_ssl=True, verify_certs=True)
+
 payload = open("/args/ESqueries.json", "r").read().replace("{{search_term}}",'"'+search_term+'"')
 payload = json.dumps(json.loads(payload)["search"]["query"])
 
