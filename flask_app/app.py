@@ -35,7 +35,7 @@ if args['MODE']=="internal":
       ssl_context=context,
   )
 else:
-  es= Elasticsearch(ES_HOST, http_auth=(args['elastic_user'], args['elastic_psswd']),use_ssl=True, verify_certs=False)
+  es= Elasticsearch(ES_HOST, http_auth=(args['elastic_user'], args['elastic_psswd']),use_ssl=True, verify_certs=True)
 
 @app.route("/pandas",methods=['GET'])
 def search():
