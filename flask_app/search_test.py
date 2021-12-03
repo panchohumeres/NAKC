@@ -1,3 +1,6 @@
+#Script for testing search worflow
+#python -i search_test.py will execute the script and leave you in the interactive shell
+
 from flask import Flask
 import os
 import socket
@@ -31,3 +34,15 @@ payload = json.dumps(json.loads(payload)["search"]["query"])
 INDEX_NAME = json.loads(open("/args/ESqueries.json", "r").read().replace("{{search_term}}",'""'))['search']['index']
 
 res = es.search(index=INDEX_NAME,body=payload)
+
+mapping=json.loads(open("/args/ESqueries.json", "r").read().replace("{{search_term}}",'""'))['search']['mapping']
+
+slc=[k for k,v in mapping.items()]            
+            
+hits=[]
+
+for h in res['hits']['hits']:
+    hits.append(h['_source'])
+
+hits=pd.DataFrame(hits)
+
