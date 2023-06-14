@@ -1,7 +1,11 @@
-# ElasticPanda  <img src="logo.png" alt="alt text" width="302px" height="100px">
+# NACK Search [2020]
+## Replica search engine for the Chilean Government open data portal, based on open source-software CKAN. Search engine made with Elasticsearch, built with public and open data sources. Powered by:
+### ElasticPanda  <img src="logo.png" alt="alt text" width="302px" height="100px">
 <a href='https://www.freepik.com/vectors/logo' style="font-size:5px">Original logo vector created by sentavio - www.freepik.com</a>
-## Elasticsearch search engine supercharged with Python Pandas.
+### Elasticsearch search engine supercharged with Python Pandas.
 Search Engine, based on **Elasticsearch** aided by **Python Pandas** data manipulation package.
+
+#### [Offline][Discontinued due to changes in the source API (government), you can replicate and test the underlying stack with this repo]
 
 ### Components:
  - **Elasticsearch**: Two-node Elasticsearch 7.2 Cluster, with native [REST API](https://www.elastic.co/guide/en/elasticsearch/reference/current/rest-apis.html) available in its endpoint.
